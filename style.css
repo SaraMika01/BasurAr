@@ -98,3 +98,23 @@ li{
 #cardcei{
     margin: 20px;
 }
+
+.fade-text {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sangria {
+  text-indent: 30px; /* o la cantidad que desees */
+}
