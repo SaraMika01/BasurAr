@@ -63,5 +63,32 @@
         
   </div>
 
+ <div class="text-center mt-3">
+ <a href="mapa.html" class="btn btn-success">Ver más sobre el mapa de reciclaje</a>
+ </div>
+ 
+<script>
+  const consejos = [
+    "Separá los residuos reciclables: papel, plástico, aluminio...",
+    "Enjuagá los envases antes de reciclarlos para evitar malos olores.",
+    "Llevá tus pilas usadas a puntos de recolección especiales.",
+    "Reutilizá frascos de vidrio cómo contenedores.",
+    "Usá bolsas reutilizables cuando vayas al supermercado.",
+    "No tires electrónicos a la basura: lleválos a un centro de reciclaje.",
+    "Compostá tus residuos orgánicos en casa si podés.",
+    "Cerrá la canilla mientras lavás los platos o te cepillás los dientes."
+  ];
+
+  let index = 0;
+
+  function cambiarConsejo() {
+    index = (index + 1) % consejos.length;
+    document.getElementById("consejo-dia").innerHTML =
+      "<strong>Consejo del Día</strong><br>" + consejos[index];
+  }
+
+  setInterval(cambiarConsejo, 3000);
+</script>
+
 </body>
 </html>
