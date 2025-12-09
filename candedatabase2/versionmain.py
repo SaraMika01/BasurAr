@@ -29,7 +29,7 @@ def modificar_usuario():
         conexion.commit()
 
         if cursor.rowcount == 0:
-            print("\n❌ No se encontró el usuario.\n")
+            print("\n No se encontró el usuario.\n")
         else:
             print("\nDatos modificados correctamente.\n")
 
@@ -55,7 +55,7 @@ def modificar_password():
         conexion.commit()
 
         if cursor.rowcount == 0:
-            print("\n❌ No existe un usuario con ese ID.\n")
+            print("\nNo existe un usuario con ese ID.\n")
         else:
             print("\nContraseña actualizada.\n")
 
@@ -79,7 +79,7 @@ def eliminar_usuario():
         conexion.commit()
 
         if cursor.rowcount == 0:
-            print("\n❌ Usuario no encontrado.\n")
+            print("\n Usuario no encontrado.\n")
         else:
             print("\nUsuario eliminado correctamente.\n")
 
@@ -116,3 +116,4 @@ def menu():
 
 if __name__ == "__main__":
     menu()
+
