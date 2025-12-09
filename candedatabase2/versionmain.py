@@ -1,6 +1,5 @@
 import mysql.connector
 
-# CONEXIÓN A LA BASE DE DATOS
 def conectar():
     return mysql.connector.connect(
         host="localhost",
@@ -9,9 +8,6 @@ def conectar():
         database="eliminacion_y_modif_datos_de_usuario"
     )
 
-# -------------------------------------
-# MODIFICAR DATOS DEL USUARIO
-# -------------------------------------
 def modificar_usuario():
     print("\n--- MODIFICAR DATOS ---")
     user_id = input("ID del usuario: ")
@@ -19,64 +15,82 @@ def modificar_usuario():
     nuevo_telefono = input("Nuevo teléfono: ")
     nueva_direccion = input("Nueva dirección: ")
 
-    conexion = conectar()
-    cursor = conexion.cursor()
+    try:
+        conexion = conectar()
+        cursor = conexion.cursor()
 
-    query = """
-        UPDATE usuarios
-        SET telefono = %s, direccion = %s
-        WHERE id = %s
-    """
+        query = """
+            UPDATE usuarios
+            SET telefono = %s, direccion = %s
+            WHERE id = %s
+        """
 
-    cursor.execute(query, (nuevo_telefono, nueva_direccion, user_id))
-    conexion.commit()
+        cursor.execute(query, (nuevo_telefono, nueva_direccion, user_id))
+        conexion.commit()
 
-    print("\nDatos modificados correctamente.\n")
+        if cursor.rowcount == 0:
+            print("\n❌ No se encontró el usuario.\n")
+        else:
+            print("\nDatos modificados correctamente.\n")
 
-    cursor.close()
-    conexion.close()
+    except Exception as e:
+        print("Error:", e)
 
-# -------------------------------------
-# MODIFICAR CONTRASEÑA
-# -------------------------------------
+    finally:
+        cursor.close()
+        conexion.close()
+
+
 def modificar_password():
     print("\n--- CAMBIAR CONTRASEÑA ---")
     user_id = input("ID del usuario: ")
     nueva_pass = input("Nueva contraseña: ")
 
-    conexion = conectar()
-    cursor = conexion.cursor()
+    try:
+        conexion = conectar()
+        cursor = conexion.cursor()
 
-    query = "UPDATE usuarios SET password = %s WHERE id = %s"
-    cursor.execute(query, (nueva_pass, user_id))
-    conexion.commit()
+        query = "UPDATE usuarios SET password = %s WHERE id = %s"
+        cursor.execute(query, (nueva_pass, user_id))
+        conexion.commit()
 
-    print("\nContraseña actualizada.\n")
+        if cursor.rowcount == 0:
+            print("\n❌ No existe un usuario con ese ID.\n")
+        else:
+            print("\nContraseña actualizada.\n")
 
-    cursor.close()
-    conexion.close()
+    except Exception as e:
+        print("Error:", e)
 
-# -------------------------------------
-# ELIMINAR USUARIO
-# -------------------------------------
+    finally:
+        cursor.close()
+        conexion.close()
+
+
 def eliminar_usuario():
     print("\n--- ELIMINAR USUARIO ---")
     user_id = input("ID del usuario: ")
 
-    conexion = conectar()
-    cursor = conexion.cursor()
+    try:
+        conexion = conectar()
+        cursor = conexion.cursor()
 
-    cursor.execute("DELETE FROM usuarios WHERE id = %s", (user_id,))
-    conexion.commit()
+        cursor.execute("DELETE FROM usuarios WHERE id = %s", (user_id,))
+        conexion.commit()
 
-    print("\nUsuario eliminado correctamente.\n")
+        if cursor.rowcount == 0:
+            print("\n❌ Usuario no encontrado.\n")
+        else:
+            print("\nUsuario eliminado correctamente.\n")
 
-    cursor.close()
-    conexion.close()
+    except Exception as e:
+        print("Error:", e)
 
-# -------------------------------------
-# Menú principal
-# -------------------------------------
+    finally:
+        cursor.close()
+        conexion.close()
+
+
 def menu():
     while True:
         print("\n========= MENÚ PRINCIPAL =========")
@@ -99,8 +113,6 @@ def menu():
         else:
             print("Opción inválida. Intente de nuevo.\n")
 
-# -------------------------------------
-# EJECUCIÓN
-# -------------------------------------
+
 if __name__ == "__main__":
     menu()
