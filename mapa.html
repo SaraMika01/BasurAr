@@ -37,72 +37,120 @@
     </div>
   </nav>
 
-  
-  <div class="container 1" id="d3">
-   <h1>Puntos de Reciclajes</h1>
-   <h4>Aquí escontrarás ubicación de Los puntos de reciclaje de Córdoba Capital.</h4>
-    <div class="row">
+  <div class="container" id="d3">
+    <h1>Puntos de reciclaje</h1>
+    <p class="lead">Aquí encontrarás la ubicación de los puntos de reciclaje de Córdoba Capital. Usa el buscador para filtrar por nombre.</p>
 
-              <div class="col">
-                  <div class="card">
-                    <div class="card-body">
-                      <h4 class="card-text" id="t2">Metales Parana</h4>
-                      <iframe id="m2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8235.907924230169!2d-64.14726822318654!3d-31.365704253624994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329739df2bbe41%3A0xc5396aad410640f9!2sMetales%20Parana!5e0!3m2!1ses!2sar!4v1756226614759!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">Metales Parana</iframe>
-                    </div>
-                  </div>
-              </div>
-              
-              <div class="col">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-text" id="t2">Eco Reciclar - chatarrería</h4>
-                    <iframe id="m2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.850255905692!2d-64.13886122505969!3d-31.363111193676744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943297fd3f348b17%3A0x9a5b5e65afbaaf69!2sEco%20Reciclar%20-%20chatarrer%C3%ADa!5e0!3m2!1ses!2sar!4v1756313418837!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">"Eco Reciclar - chatarrería</iframe>
-                  </div>
-                </div>
-            </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <input id="mapFilter" class="form-control" placeholder="Buscar por nombre (ej. 'Metales')" aria-label="Buscar puntos de reciclaje">
+      </div>
+      <div class="col-md-6 text-md-end mt-2 mt-md-0">
+        <small class="text-muted">Se muestran puntos verificados y actualizados.</small>
+      </div>
+    </div>
 
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-text" id="t2">Feria Americana Hormigas Coloradas</h4>
-                  <iframe id="m2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.5612036651946!2d-64.14148542505913!3d-31.371085794061667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943297704235155b%3A0x18f785ebf4746fe2!2sFERIA%20AMERICANA%20HORMIGAS%20COLORADAS!5e0!3m2!1ses!2sar!4v1756313634699!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">Feria Americana Hormigas Coloradas</iframe>
-                </div>
-              </div>
-            </div>
+    <div class="row" id="mapCards">
 
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-text" id="t2">Recicladora Mediterránea SRL</h4>
-                  <iframe id="m2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1470.9298104450388!2d-64.15473461629053!3d-31.419116351316788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2b18051b541%3A0x21a16d6ec6372a37!2sRecicladora%20Mediterr%C3%A1nea%20SRL!5e0!3m2!1ses!2sar!4v1756314326978!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">Recicladora Mediterránea SRL</iframe>
-                </div>
-              </div>
+      <div class="col-md-6 col-lg-4 mb-4 map-card">
+        <div class="card h-100">
+          <div class="card-body p-0">
+            <h5 class="map-title p-3 mb-0">Metales Parana</h5>
+            <div class="ratio ratio-16x9">
+              <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8235.907924230169!2d-64.14726822318654!3d-31.365704253624994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329739df2bbe41%3A0xc5396aad410640f9!2sMetales%20Parana!5e0!3m2!1ses!2sar!4v1756226614759!5m2!1ses!2sar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Metales Parana"></iframe>
             </div>
+          </div>
+          <div class="card-footer d-flex">
+            <button class="btn btn-sm btn-outline-primary open-map ms-auto" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8235.907924230169!2d-64.14726822318654!3d-31.365704253624994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329739df2bbe41%3A0xc5396aad410640f9!2sMetales%20Parana!5e0!3m2!1ses!2sar!4v1756226614759!5m2!1ses!2sar">Ver mapa grande</button>
+          </div>
+        </div>
+      </div>
 
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-text" id="t2">GALPÓN 91 Pueyrredón</h4>
-                  <iframe id="m2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1508.8744049943248!2d-64.14949016392656!3d-31.393093722957186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329904d6a66f59%3A0xd555332b140ef6b3!2sGALP%C3%93N%2091%20Pueyrred%C3%B3n!5e0!3m2!1ses!2sar!4v1756314826624!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">GALPÓN 91 Pueyrredón</iframe>
-                </div>
-              </div>
+      <div class="col-md-6 col-lg-4 mb-4 map-card">
+        <div class="card h-100">
+          <div class="card-body p-0">
+            <h5 class="map-title p-3 mb-0">Eco Reciclar - Chatarrería</h5>
+            <div class="ratio ratio-16x9">
+              <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.850255905692!2d-64.13886122505969!3d-31.363111193676744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943297fd3f348b17%3A0x9a5b5e65afbaaf69!2sEco%20Reciclar%20-%20chatarrer%C3%ADa!5e0!3m2!1ses!2sar!4v1756313418837!5m2!1ses!2sar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Eco Reciclar - Chatarrería"></iframe>
             </div>
+          </div>
+          <div class="card-footer d-flex">
+            <button class="btn btn-sm btn-outline-primary open-map ms-auto" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.850255905692!2d-64.13886122505969!3d-31.363111193676744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943297fd3f348b17%3A0x9a5b5e65afbaaf69!2sEco%20Reciclar%20-%20chatarrer%C3%ADa!5e0!3m2!1ses!2sar!4v1756313418837!5m2!1ses!2sar">Ver mapa grande</button>
+          </div>
+        </div>
+      </div>
 
-            <div class="col">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-text" id="t2">Cooperativa de trabajo los cuadraditos limitada</h4>
-                  <iframe id="m2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.0248942450858!2d-64.12614402505702!3d-31.41344019610778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432bd936618ebd3%3A0x8306d32f2b3b07d8!2sCooperativa%20de%20trabajo%20los%20cuadraditos%20limitada!5e0!3m2!1ses!2sar!4v1756314968512!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">Cooperativa de trabajo los cuadraditos limitada</iframe>
-                </div>
-              </div>
+      <div class="col-md-6 col-lg-4 mb-4 map-card">
+        <div class="card h-100">
+          <div class="card-body p-0">
+            <h5 class="map-title p-3 mb-0">Feria Americana Hormigas Coloradas</h5>
+            <div class="ratio ratio-16x9">
+              <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.5612036651946!2d-64.14148542505913!3d-31.371085794061667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943297704235155b%3A0x18f785ebf4746fe2!2sFERIA%20AMERICANA%20HORMIGAS%20COLORADAS!5e0!3m2!1ses!2sar!4v1756313634699!5m2!1ses!2sar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Feria Americana Hormigas Coloradas"></iframe>
             </div>
-    </div>   
+          </div>
+          <div class="card-footer d-flex">
+            <button class="btn btn-sm btn-outline-primary open-map ms-auto" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.5612036651946!2d-64.14148542505913!3d-31.371085794061667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943297704235155b%3A0x18f785ebf4746fe2!2sFERIA%20AMERICANA%20HORMIGAS%20COLORADAS!5e0!3m2!1ses!2sar!4v1756313634699!5m2!1ses!2sar">Ver mapa grande</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4 map-card">
+        <div class="card h-100">
+          <div class="card-body p-0">
+            <h5 class="map-title p-3 mb-0">Recicladora Mediterránea SRL</h5>
+            <div class="ratio ratio-16x9">
+              <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1470.9298104450388!2d-64.15473461629053!3d-31.419116351316788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2b18051b541%3A0x21a16d6ec6372a37!2sRecicladora%20Mediterr%C3%A1nea%20SRL!5e0!3m2!1ses!2sar!4v1756314326978!5m2!1ses!2sar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Recicladora Mediterránea SRL"></iframe>
+            </div>
+          </div>
+          <div class="card-footer d-flex">
+            <button class="btn btn-sm btn-outline-primary open-map ms-auto" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1470.9298104450388!2d-64.15473461629053!3d-31.419116351316788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2b18051b541%3A0x21a16d6ec6372a37!2sRecicladora%20Mediterr%C3%A1nea%20SRL!5e0!3m2!1ses!2sar!4v1756314326978!5m2!1ses!2sar">Ver mapa grande</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4 map-card">
+        <div class="card h-100">
+          <div class="card-body p-0">
+            <h5 class="map-title p-3 mb-0">GALPÓN 91 Pueyrredón</h5>
+            <div class="ratio ratio-16x9">
+              <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1508.8744049943248!2d-64.14949016392656!3d-31.393093722957186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329904d6a66f59%3A0xd555332b140ef6b3!2sGALP%C3%93N%2091%20Pueyrred%C3%B3n!5e0!3m2!1ses!2sar!4v1756314826624!5m2!1ses!2sar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="GALPÓN 91 Pueyrredón"></iframe>
+            </div>
+          </div>
+          <div class="card-footer d-flex">
+            <button class="btn btn-sm btn-outline-primary open-map ms-auto" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1508.8744049943248!2d-64.14949016392656!3d-31.393093722957186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329904d6a66f59%3A0xd555332b140ef6b3!2sGALP%C3%93N%2091%20Pueyrred%C3%B3n!5e0!3m2!1ses!2sar!4v1756314826624!5m2!1ses!2sar">Ver mapa grande</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 mb-4 map-card">
+        <div class="card h-100">
+          <div class="card-body p-0">
+            <h5 class="map-title p-3 mb-0">Cooperativa de trabajo Los Cuadraditos Limitada</h5>
+            <div class="ratio ratio-16x9">
+              <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.0248942450858!2d-64.12614402505702!3d-31.41344019610778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432bd936618ebd3%3A0x8306d32f2b3b07d8!2sCooperativa%20de%20trabajo%20los%20cuadraditos%20limitada!5e0!3m2!1ses!2sar!4v1756314968512!5m2!1ses!2sar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Cooperativa de trabajo Los Cuadraditos Limitada"></iframe>
+            </div>
+          </div>
+          <div class="card-footer d-flex">
+            <button class="btn btn-sm btn-outline-primary open-map ms-auto" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.0248942450858!2d-64.12614402505702!3d-31.41344019610778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432bd936618ebd3%3A0x8306d32f2b3b07d8!2sCooperativa%20de%20trabajo%20los%20cuadraditos%20limitada!5e0!3m2!1ses!2sar!4v1756314968512!5m2!1ses!2sar">Ver mapa grande</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="noResults" class="col-12 text-center text-muted d-none">No se encontraron puntos que coincidan con la búsqueda.</div>
+    </div>
+
+    <div class="text-center mt-3">
+      <a href="consejoseinf.html" class="btn btn-success">Ver más consejos sobre reciclaje</a>
+    </div>
+
   </div>
-
-   <div class="text-center mt-5">
-  <a href="consejoseinf.html" class="btn btn-success">Ver más consejos sobre reciclaje</a>
- </div>
-
-</div>
+  <footer class="mt-4 py-3 border-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <small class="text-muted">&copy; <span id="year"></span> BasurAr</small>
+    <div class="text-muted small">Visitas: <span id="visitas">0</span></div>
+  </div>
+</footer>
+  <!-- Local script with DOM behavior -->
+  <script src="script.js"></script>
 </body>
 </html>
