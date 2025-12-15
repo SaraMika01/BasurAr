@@ -41,24 +41,35 @@
    
     <div class="row">
       <h1><strong>¡Hola a Todos!</strong></h1>
-      <h4>Nuestra app está pensada sobre la <strong>contaminación  y la desinformación</strong> sobre el reciclaje!<br></h4>
-      <h4>BasurAr es una iniciativa digital que busca reducir la basura en las calles de Córdoba y fomentar el reciclaje como hábito cotidiano. A través de nuestra plataforma, los vecinos pueden aprender a separar residuos, informarse sobre cómo reciclar, saber en dónde se encuntran los puntos de reciclaje y participar en acciones comunitarias que protegen el medioambiente.</h4>
-      <h1> </h1>
-              <div class="col" id="col2">
-                  <div class="card">
-                    <div class="card-body">
-                      <iframe id="m1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27254.341506533638!2d-64.18158795277772!3d-31.36469955877378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329790bc4a550f%3A0x92e024b97a917be5!2sCentro%20de%20Transferencia%20de%20Residuos%20-%20CTR!5e0!3m2!1ses!2sar!4v1755621786804!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                  </div>
+      <h4>Nuestra app está pensada para luchar contra la <strong>contaminación y la desinformación</strong> sobre el reciclaje.</h4>
+      <h4>BasurAr es una iniciativa digital que busca reducir la basura en las calles de Córdoba y fomentar el reciclaje como hábito cotidiano. A través de nuestra plataforma, los vecinos pueden aprender a separar residuos, informarse sobre cómo reciclar, saber en dónde se encuentran los puntos de reciclaje y participar en acciones comunitarias.</h4>
+
+      <div class="row">
+        <div class="col-md-8 mb-3" id="col2">
+          <div class="card shadow-sm">
+            <div class="card-body p-0">
+              <div class="ratio ratio-16x9">
+                <iframe id="m1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27254.341506533638!2d-64.18158795277772!3d-31.36469955877378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329790bc4a550f%3A0x92e024b97a917be5!2sCentro%20de%20Transferencia%20de%20Residuos%20-%20CTR!5e0!3m2!1ses!2sar!4v1755621786804!5m2!1ses!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
-              
-              <div class="col" id="col1">
-                <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                      <h5 class="card-text"><strong>Consejos del Día </strong><br>Separa todos aquellos residuos que se pueden reciclar:<br>Papel, plástico, aluminio, entre otros.</h5>
-                  </div>
-                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4" id="col1">
+          <div class="card shadow-sm mb-3" aria-live="polite">
+            <div class="card-body">
+              <h5 class="card-title">Consejo del Día</h5>
+              <p id="consejo-dia" class="card-text">Cargando consejo...</p>
+              <div class="d-flex gap-2 mt-2">
+                <button id="prevConsejo" class="btn btn-outline-secondary btn-sm" title="Consejo anterior">Anterior</button>
+                <button id="nextConsejo" class="btn btn-outline-secondary btn-sm ms-auto" title="Siguiente consejo">Siguiente</button>
               </div>
+            </div>
+          </div>
+
+          <!-- 'Sobre Nosotros' eliminado del inicio para simplificar la página principal -->
+        </div>
+      </div>
     </div>
         
   </div>
@@ -67,28 +78,17 @@
  <a href="mapa.html" class="btn btn-success">Ver más sobre el mapa de reciclaje</a>
  </div>
  
-<script>
-  const consejos = [
-    "Separá los residuos reciclables: papel, plástico, aluminio...",
-    "Enjuagá los envases antes de reciclarlos para evitar malos olores.",
-    "Llevá tus pilas usadas a puntos de recolección especiales.",
-    "Reutilizá frascos de vidrio cómo contenedores.",
-    "Usá bolsas reutilizables cuando vayas al supermercado.",
-    "No tires electrónicos a la basura: lleválos a un centro de reciclaje.",
-    "Compostá tus residuos orgánicos en casa si podés.",
-    "Cerrá la canilla mientras lavás los platos o te cepillás los dientes."
-  ];
+<footer class="mt-4 py-3 border-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <small class="text-muted">&copy; <span id="year"></span> BasurAr</small>
+    <div class="text-muted small">Visitas: <span id="visitas">0</span></div>
+  </div>
+</footer>
 
-  let index = 0;
-
-  function cambiarConsejo() {
-    index = (index + 1) % consejos.length;
-    document.getElementById("consejo-dia").innerHTML =
-      "<strong>Consejo del Día</strong><br>" + consejos[index];
-  }
-
-  setInterval(cambiarConsejo, 3000);
-</script>
+<!-- Bootstrap JS (from CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoA6VQU3jQZ4h2v1l6WZ/6Y5Y1q8K3QG2AQG5uHf4k2xXr1" crossorigin="anonymous"></script>
+<!-- Local script with DOM behavior -->
+<script src="script.js"></script>
 
 </body>
 </html>
